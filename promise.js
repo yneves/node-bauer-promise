@@ -99,6 +99,8 @@ var Deferred = lib.factory.class({
 		if (value instanceof Promise) {
 			value.done(function(val) {
 				deferred.resolve(val);
+			},function(reason) {
+				deferred.reject(reason);
 			});
 		} else {
 			this.promise.fulfill(value);

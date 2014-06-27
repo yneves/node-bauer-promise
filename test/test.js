@@ -13,7 +13,6 @@ var assert = require("assert");
 // - -------------------------------------------------------------------- - //
 // - tests
 
-
 describe("promise",function() {
 
 	it("exports",function() {
