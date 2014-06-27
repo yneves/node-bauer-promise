@@ -21,7 +21,8 @@
     "mocha": ">=1.0.0"
   },
   "dependencies": {
-    "bauer-factory": ">=1.0.0"
+    "bauer-factory": ">=1.0.0",
+    "thisable": ">=1.0.0"
   },
   "main": "promise.js"	
 }
