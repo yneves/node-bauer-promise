@@ -1,0 +1,27 @@
+{
+  "name": "bauer-promise",
+  "version": "1.0.0",
+  "description": "Just another promise library.",
+  "keywords": ["promise","defer","deferred","when","resolve","reject","then","fail"],
+  "license": "MIT",
+  "homepage": "https://github.com/yneves/node-bauer-promise",
+  "author": {
+    "name": "Yuri Neves Silveira",
+    "url": "http://yneves.com/",
+    "email": "npm@yneves.com"
+  },
+  "repository":{
+    "type": "git",
+    "url": "https://github.com/yneves/node-bauer-promise.git"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "devDependencies": {
+    "mocha": ">=1.0.0"
+  },
+  "dependencies": {
+    "bauer-factory": ">=1.0.0"
+  },
+  "main": "promise.js"	
+}
