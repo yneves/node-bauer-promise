@@ -8,7 +8,7 @@
 // - libs
 
 var lib = {
-	factory: require("bauer-factory"),
+	factory: require("yns-factory"),
 	thisable: require("thisable"),
 };
 
@@ -128,6 +128,7 @@ var Promise = lib.factory.class({
 	// .then(resolved,rejected)
 	then: function(resolved,rejected) {
 		var deferred = new Deferred();
+		if (this._this) deferred.bind(this._this);
 		resolved = wrapResolved(resolved,deferred);
 		rejected = wrapRejected(rejected,deferred);
 		lib.thisable.prototype.then.call(this,resolved,rejected);
@@ -153,9 +154,7 @@ var Promise = lib.factory.class({
 
 // .when(promises)
 var when = function() {
-	var deferred = this === exports 
-		? new Deferred() 
-		: new Deferred(this);
+	var deferred = new Deferred();
 	var promises;
 	if (arguments.length == 1) {
 		var type = lib.factory.type(arguments[0]);

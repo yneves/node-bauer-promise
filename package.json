@@ -1,6 +1,6 @@
 {
   "name": "bauer-promise",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Just another promise library.",
   "keywords": ["promise","defer","deferred","when","resolve","reject","then","fail"],
   "license": "MIT",
