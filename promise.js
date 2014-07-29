@@ -8,14 +8,14 @@
 // - libs
 
 var lib = {
-	factory: require("yns-factory"),
+	factory: require("bauer-factory"),
 	thisable: require("thisable"),
 };
 
 // - -------------------------------------------------------------------- - //
 
 function throwLater(error) {
-	setImmediate(function() { 
+	setImmediate(function() {
 		throw error;
 	});
 }
@@ -25,12 +25,12 @@ function wrapResolved(resolved,deferred) {
 	if (type == "function") {
 		if (deferred) {
 			return function(value) {
-				try { deferred.resolve(resolved.call(this,value)) } 
+				try { deferred.resolve(resolved.call(this,value)) }
 				catch(error) { deferred.reject(error) }
 			};
 		} else {
 			return function(value) {
-				try { resolved.call(this,value) } 
+				try { resolved.call(this,value) }
 				catch(error) { throwLater(error) }
 			}
 		}
@@ -58,7 +58,7 @@ function wrapRejected(rejected,deferred) {
 	var type = lib.factory.type(rejected);
 	if (type == "function") {
 		return function(reason) {
-			try { rejected.call(this,reason) } 
+			try { rejected.call(this,reason) }
 			catch(error) { throwLater(error) }
 		}
 	} else if (rejected instanceof Deferred) {
@@ -79,7 +79,7 @@ function wrapRejected(rejected,deferred) {
 
 // @Deferred
 var Deferred = lib.factory.class({
-	
+
 	// @constructor
 	constructor: function(context) {
 		this.promise = new Promise();
@@ -87,12 +87,12 @@ var Deferred = lib.factory.class({
 			this.bind(context);
 		}
 	},
-	
+
 	// .bind(context)
 	bind: function(context) {
 		this.promise.bind(context);
 	},
-	
+
 	// .resolve(value)
 	resolve: function(value) {
 		var deferred = this;
@@ -106,7 +106,7 @@ var Deferred = lib.factory.class({
 			this.promise.fulfill(value);
 		}
 	},
-	
+
 	// .reject(reason)
 	reject: function(reason) {
 		if (!lib.factory.isError(reason)) {

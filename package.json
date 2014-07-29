@@ -1,6 +1,6 @@
 {
   "name": "bauer-promise",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Just another promise library.",
   "keywords": ["promise","defer","deferred","when","resolve","reject","then","fail"],
   "license": "MIT",
@@ -21,8 +21,8 @@
     "mocha": ">=1.0.0"
   },
   "dependencies": {
-    "bauer-factory": ">=1.0.0",
+    "bauer-factory": ">=1.0.7",
     "thisable": ">=1.0.0"
   },
-  "main": "promise.js"	
+  "main": "promise.js"
 }
