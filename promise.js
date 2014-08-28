@@ -125,6 +125,20 @@ var Promise = lib.factory.class({
 	// @inherits
 	inherits: lib.thisable,
 
+	// @constructor
+	constructor: function(code) {
+		if (lib.factory.isFunction(code)) {
+			var promise = this;
+			setImmediate(function() {
+				code(function(value) {
+					promise.fulfill(value);
+				},function(reason) {
+					promise.reject(reason);
+				});
+			});
+		}
+	},
+
 	// .then(resolved,rejected)
 	then: function(resolved,rejected) {
 		var deferred = new Deferred();
@@ -153,7 +167,7 @@ var Promise = lib.factory.class({
 // - -------------------------------------------------------------------- - //
 
 // .when(promises)
-var when = function() {
+function when() {
 	var deferred = new Deferred();
 	var promises;
 	if (arguments.length == 1) {

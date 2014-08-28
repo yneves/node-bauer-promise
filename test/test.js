@@ -160,6 +160,25 @@ describe("promise",function() {
 		setTimeout(function() { a.reject("reason") },0);
 	});
 
+	it("function-constructor",function(done) {
+		var a = new P.cls.Promise(function(resolve,reject) {
+			setTimeout(function() {
+				resolve(3);
+			},10);
+		});
+		var b = new P.cls.Promise(function(resolve,reject) {
+			a.then(function(value) {
+				assert.ok(value == 3);
+				resolve();
+			})
+		});
+		b.done(function() {
+			done();
+		},function(error) {
+			done(error);
+		});
+	});
+
 });
 
 // - -------------------------------------------------------------------- - //
