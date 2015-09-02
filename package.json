@@ -1,8 +1,18 @@
 {
   "name": "bauer-promise",
-  "version": "1.0.4",
-  "description": "Just another promise library.",
-  "keywords": ["promise","defer","deferred","when","resolve","reject","then","fail"],
+  "version": "1.1.0",
+  "description": "Wrapper for bluebird with extend feature.",
+  "keywords": [
+    "promise",
+    "defer",
+    "deferred",
+    "when",
+    "resolve",
+    "reject",
+    "then",
+    "fail",
+    "bluebird"
+  ],
   "license": "MIT",
   "homepage": "https://github.com/yneves/node-bauer-promise",
   "author": {
@@ -10,7 +20,7 @@
     "url": "http://yneves.com/",
     "email": "npm@yneves.com"
   },
-  "repository":{
+  "repository": {
     "type": "git",
     "url": "https://github.com/yneves/node-bauer-promise.git"
   },
@@ -21,8 +31,8 @@
     "mocha": ">=1.0.0"
   },
   "dependencies": {
-    "bauer-factory": ">=1.0.7",
-    "thisable": ">=1.0.0"
+    "bauer-factory": ">=2.0.0",
+    "bluebird": "^2.9.34"
   },
-  "main": "promise.js"
+  "main": "lib/index.js"
 }
