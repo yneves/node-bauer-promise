@@ -14,6 +14,7 @@ var assert = require("assert");
 
 describe("promise",function() {
 
+  // TODO: write tests
 });
 
 // - -------------------------------------------------------------------- - //
